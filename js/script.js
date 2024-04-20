@@ -1,0 +1,2 @@
+alert('Project Tamagotchi')
+
