@@ -74,6 +74,23 @@ h1 {
     display: none;
 }
 
+.pet-1 img {
+    width: 206px; 
+    height: auto; 
+    
+
+}
+
+.pet-1 {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+
+
 
 
   
