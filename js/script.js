@@ -1,4 +1,4 @@
-// alert('Project Tamagotchi')
+// alert('Project 1')
 
 //Make a commit after you finish each of the following
 
@@ -40,7 +40,30 @@ class Pet {
 // Sleepiness (1-10 scale)
 // Boredom (1-10 scale)
 // Age
-// Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
+// Add buttons to the screen to feed your pet, 
+// turn off the lights, 
+document.addEventListener('DOMContentLoaded', function() {
+    const lightsOnBtn = document.querySelector('.lights-on');
+    const lightsOffBtn = document.querySelector('.lights-off');
+    const background1 = document.querySelector('.background-1');
+    const background2 = document.querySelector('.background-2');
+
+    lightsOnBtn.addEventListener('click', function() {
+        background1.style.display = 'block';
+        background2.style.display = 'none';
+        document.body.style.backgroundColor = 'aquamarine';
+    });
+
+    lightsOffBtn.addEventListener('click', function() {
+        background1.style.display = 'none';
+        background2.style.display = 'block';
+        document.body.style.backgroundColor = 'black';
+    });
+});
+
+
+
+// and play with your pet.
 
 // Add the ability to name your pet.
 
