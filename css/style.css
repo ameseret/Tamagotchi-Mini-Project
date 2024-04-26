@@ -1,9 +1,18 @@
 h1 {
-    text-align: center;
-    color:#0023c0;
+    text-align: right;
+    color:aquamarine;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: xx-large;
+    font-size: 75px;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 40%;
+    
+  
+   
 }
+
+
 
 .buttons {
     text-align: right;
@@ -36,7 +45,6 @@ h1 {
 .buttons button {
     background-color: aquamarine;
     color: black; 
-    border: 2px solid blue; 
     padding: 10px 20px; 
     margin: 5px; 
     cursor: pointer; 
@@ -46,7 +54,6 @@ h1 {
 .start-game-button button {
     background-color: aquamarine;
     color: black; 
-    border: 2px solid blue; 
     padding: 10px 20px; 
     margin: 5px; 
     cursor: pointer; 
@@ -61,6 +68,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
+    
 }
 
 .background-2 {
@@ -75,8 +83,10 @@ h1 {
 }
 
 .pet-1 img {
-    width: 206px; 
+    width: 506px; 
     height: auto; 
+    
+
     
 
 }
@@ -87,7 +97,57 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+  
 }
+
+.pet-2 img {
+    width: 606px; 
+    height: auto; 
+    
+
+    
+
+}
+
+.pet-2 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+}
+
+.pet-3 img {
+    width: 706px; 
+    height: auto; 
+    
+
+    
+
+}
+
+.pet-3 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+    
+}
+
+.metrics{
+    z-index: 1;
+    text-align: left;
+    color: aquamarine;
+    position: absolute;
+    top: 75px;
+    font-size: 50px;
+    
+}
+
+
 
 
 
