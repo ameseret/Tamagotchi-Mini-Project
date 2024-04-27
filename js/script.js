@@ -5,6 +5,7 @@
 // Create an Object or Class (look at your notes on JS Classes if you forgot) for your Tamagotchi
 class Pet {
     constructor(hunger, sleepiness, boredom, age, name ) {
+
           this.hunger = hunger
           this.sleepiness = sleepiness
           this.boredom = boredom
@@ -16,8 +17,9 @@ class Pet {
         console.log("Eating");
         if (this.hunger > 0) {
             this.hunger--;
+            console.log("Hunger:", this.hunger); 
             document.getElementById('hunger').innerText = `Hunger: ${this.hunger}`;
-        }
+        } 
     }
 
     rest() {
@@ -32,8 +34,10 @@ class Pet {
         console.log("Playing");
         if (this.boredom > 0) {
             this.boredom--;
+            console.log("Boredom:", this.boredom);
             document.getElementById('boredom').innerText = `Boredom: ${this.boredom}`;
-        }
+        } 
+    
     }
 
     agingProcess() {
@@ -47,7 +51,7 @@ class Pet {
 
 // Instantiate your Tamagotchi (If you created a class)
 
-const firstPet = new Pet(0, 0, 0, 0, "baby lion");
+const firstPet = new Pet(10, 10, 10, 10, "baby lion");
 
 // Display a character of your choice on the screen to represent your pet
 //-------- I already have the character displayed
