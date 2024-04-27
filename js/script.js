@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         background1.style.display = 'none';
         background2.style.display = 'block';
         document.body.style.backgroundColor = 'black';
+        firstPet.rest();
     });
 });
 
