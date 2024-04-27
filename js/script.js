@@ -13,18 +13,30 @@ class Pet {
     }
 
     eat() {
-
+        if (this.hunger > 0) {
+            this.hunger--;
+            document.getElementById('hunger').innerText = `Hunger: ${this.hunger}`;
+        }
     }
 
     rest() {
-
+        if (this.sleepiness > 0) {
+            this.sleepiness--;
+            document.getElementById('sleepiness').innerText = `Sleepiness: ${this.sleepiness}`;
+        }
     }
 
-    play() {
 
+    play() {
+        if (this.boredom > 0) {
+            this.boredom--;
+            document.getElementById('boredom').innerText = `Boredom: ${this.boredom}`;
+        }
     }
 
     agingProcess() {
+        this.age++;
+        document.getElementById('age').innerText = `Age: ${this.age}`;
 
     }
 
@@ -33,7 +45,7 @@ class Pet {
 
 // Instantiate your Tamagotchi (If you created a class)
 
-const firstPet = new Pet(1, 1, 1, 0, "baby lion");
+const firstPet = new Pet(0, 0, 0, 0, "baby lion");
 
 // Display a character of your choice on the screen to represent your pet
 //-------- I already have the character displayed
@@ -48,7 +60,7 @@ const firstPet = new Pet(1, 1, 1, 0, "baby lion");
 // Add buttons to the screen to feed your pet, 
 //----------1. I have the buttons displayed in html and css now I have to make them active in javascript
 // turn off the lights, 
-//-----1. these two buttons were the first button I made active in javascript 
+//-----1. These two buttons were the first buttons I made active in javascript 
 document.addEventListener('DOMContentLoaded', function() {
     const lightsOnBtn = document.querySelector('.lights-on');
     const lightsOffBtn = document.querySelector('.lights-off');
