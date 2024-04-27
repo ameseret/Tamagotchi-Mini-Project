@@ -13,6 +13,7 @@ class Pet {
     }
 
     eat() {
+        console.log("Eating");
         if (this.hunger > 0) {
             this.hunger--;
             document.getElementById('hunger').innerText = `Hunger: ${this.hunger}`;
@@ -28,6 +29,7 @@ class Pet {
 
 
     play() {
+        console.log("Playing");
         if (this.boredom > 0) {
             this.boredom--;
             document.getElementById('boredom').innerText = `Boredom: ${this.boredom}`;
@@ -57,8 +59,24 @@ const firstPet = new Pet(0, 0, 0, 0, "baby lion");
 // Sleepiness (1-10 scale)
 // Boredom (1-10 scale)
 // Age
+
 // Add buttons to the screen to feed your pet, 
+// and play with your pet.
 //----------1. I have the buttons displayed in html and css now I have to make them active in javascript
+document.addEventListener('DOMContentLoaded', function() {
+    const feedButton = document.querySelector('.feed-button');
+    const playButton = document.querySelector('.play-button');
+
+    feedButton.addEventListener('click', function() {
+        firstPet.eat();
+    });
+
+    playButton.addEventListener('click', function() {
+        firstPet.play();
+    });
+});
+
+
 // turn off the lights, 
 //-----1. These two buttons were the first buttons I made active in javascript 
 document.addEventListener('DOMContentLoaded', function() {
@@ -83,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// and play with your pet.
+
 
 // Add the ability to name your pet.
 
