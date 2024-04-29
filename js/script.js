@@ -57,7 +57,7 @@ const firstPet = new Pet(10, 10, 10, 10, "baby lion");
 //-------- I already have the character displayed
 
 // Display the following metrics for your pet:
-//------- I have the metrics displayed in html and css now I have to make them active in javascript
+
 
 // Hunger (1-10 scale)
 // Sleepiness (1-10 scale)
@@ -66,24 +66,28 @@ const firstPet = new Pet(10, 10, 10, 10, "baby lion");
 
 // Add buttons to the screen to feed your pet, 
 // and play with your pet.
-//----------1. I have the buttons displayed in html and css now I have to make them active in javascript
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
+
+
+    const startGameButton = document.querySelector('.start-game-event');
+    startGameButton.addEventListener('click', function() {
+
+        const petName = prompt("Enter the name of your pet:");
+
+        const firstPet = new Pet(10, 10, 10, 10, petName);
+
+        alert(`Your pet's name is ${petName}!`);
+
+        initializeGame(firstPet);
+    });
+
+    function initializeGame(firstPet) {
+
     const feedButton = document.querySelector('.feed-button');
     const playButton = document.querySelector('.play-button');
-
-    feedButton.addEventListener('click', function() {
-        firstPet.eat();
-    });
-
-    playButton.addEventListener('click', function() {
-        firstPet.play();
-    });
-});
-
-
-// turn off the lights, 
-//-----1. These two buttons were the first buttons I made active in javascript 
-document.addEventListener('DOMContentLoaded', function() {
     const lightsOnBtn = document.querySelector('.lights-on');
     const lightsOffBtn = document.querySelector('.lights-off');
     const background1 = document.querySelector('.background-1');
@@ -101,6 +105,23 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.backgroundColor = 'black';
         firstPet.rest();
     });
+
+    feedButton.addEventListener('click', function() {
+        firstPet.eat();
+    });
+
+    playButton.addEventListener('click', function() {
+        firstPet.play();
+           });
+
+    
+    
+     
+
+     }
+
+
+
 });
 
 
@@ -109,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Add the ability to name your pet.
+
 
 // Style the page.
 //------1. Some styling is already done I might update it more later in the build
