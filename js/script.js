@@ -123,22 +123,32 @@ document.addEventListener('DOMContentLoaded', function() {
         firstPet.play();
            });
 
-    // This function increases the pet's age every minute
-    setInterval(function() {
+    
+    
+     // This function increases the pet's age every minute
+     let ageInterval = setInterval(function() {
         firstPet.agingProcess(); // The agingProcess method is called twice in this function to increase the age by two every minute
         firstPet.agingProcess(); 
     }, 60000); // It executes every 1 minute (60,000 milliseconds)
     
-      // This function increases Hunger, Sleepiness, and Boredom every 20 seconds
+      // This function increases Hunger, Sleepiness, and Boredom every 10 seconds
 setInterval(function() {
     increaseMetrics();
 }, 10000); // It executes every 10 seconds (10,000 milliseconds)
 
 function increaseMetrics() {
-    firstPet.hunger++;
-    firstPet.sleepiness++;
-    firstPet.boredom++;
+    if (firstPet.hunger < 10) {
+        firstPet.hunger++;
+    }
+    if (firstPet.sleepiness < 10) {
+        firstPet.sleepiness++;
+    }
+    if (firstPet.boredom < 10) {
+        firstPet.boredom++;
+    }
+
     updateMetricsDisplay();
+    checkIfPetIsDead();
 }
 
 function updateMetricsDisplay() {
@@ -146,6 +156,15 @@ function updateMetricsDisplay() {
     document.getElementById('sleepiness').innerText = `Sleepiness: ${firstPet.sleepiness}`;
     document.getElementById('boredom').innerText = `Boredom: ${firstPet.boredom}`;
 }
+
+function checkIfPetIsDead() {
+    if (firstPet.hunger === 10 || firstPet.sleepiness === 10 || firstPet.boredom === 10) {
+        alert("Your pet is dead! Game over. ");
+        clearInterval(ageInterval); //the clearInterval method is used here to stop the pet from aging after the game is over
+     
+
+     }
+    }
 
      }
 
