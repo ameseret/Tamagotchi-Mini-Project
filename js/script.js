@@ -60,7 +60,7 @@ class Pet {
 
 // Instantiate your Tamagotchi (If you created a class)
 
-const firstPet = new Pet(10, 10, 10, 0, "baby lion");
+const firstPet = new Pet(5, 5, 5, 0, "baby lion");
 
 // Display a character of your choice on the screen to represent your pet
 //-------- I already have the character displayed
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const petName = prompt("Enter the name of your pet:");
 
-        const firstPet = new Pet(10, 10, 10, 0, petName);
+        const firstPet = new Pet(5, 5, 5, 0, petName);
 
         alert(`Your pet's name is ${petName}!`);
 
@@ -129,7 +129,23 @@ document.addEventListener('DOMContentLoaded', function() {
         firstPet.agingProcess(); 
     }, 60000); // It executes every 1 minute (60,000 milliseconds)
     
-     
+      // This function increases Hunger, Sleepiness, and Boredom every 20 seconds
+setInterval(function() {
+    increaseMetrics();
+}, 10000); // It executes every 10 seconds (10,000 milliseconds)
+
+function increaseMetrics() {
+    firstPet.hunger++;
+    firstPet.sleepiness++;
+    firstPet.boredom++;
+    updateMetricsDisplay();
+}
+
+function updateMetricsDisplay() {
+    document.getElementById('hunger').innerText = `Hunger: ${firstPet.hunger}`;
+    document.getElementById('sleepiness').innerText = `Sleepiness: ${firstPet.sleepiness}`;
+    document.getElementById('boredom').innerText = `Boredom: ${firstPet.boredom}`;
+}
 
      }
 
