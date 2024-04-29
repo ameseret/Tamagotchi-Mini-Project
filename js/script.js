@@ -44,6 +44,15 @@ class Pet {
         this.age++;
         document.getElementById('age').innerText = `Age: ${this.age}`;
 
+        //This block of code morphs the pet when it's age is 4 and when its age is 8
+        if (this.age === 4) {
+            document.querySelector('.pet-1').style.display = 'none';
+            document.querySelector('.pet-2').style.display = 'block';
+        } else if (this.age === 8) {
+            document.querySelector('.pet-2').style.display = 'none';
+            document.querySelector('.pet-3').style.display = 'block';
+        }
+
     }
 
     
@@ -51,7 +60,7 @@ class Pet {
 
 // Instantiate your Tamagotchi (If you created a class)
 
-const firstPet = new Pet(10, 10, 10, 10, "baby lion");
+const firstPet = new Pet(10, 10, 10, 0, "baby lion");
 
 // Display a character of your choice on the screen to represent your pet
 //-------- I already have the character displayed
@@ -77,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const petName = prompt("Enter the name of your pet:");
 
-        const firstPet = new Pet(10, 10, 10, 10, petName);
+        const firstPet = new Pet(10, 10, 10, 0, petName);
 
         alert(`Your pet's name is ${petName}!`);
 
@@ -114,7 +123,11 @@ document.addEventListener('DOMContentLoaded', function() {
         firstPet.play();
            });
 
-    
+    // This function increases the pet's age every minute
+    setInterval(function() {
+        firstPet.agingProcess(); // The agingProcess method is called twice in this function to increase the age by two every minute
+        firstPet.agingProcess(); 
+    }, 60000); // It executes every 1 minute (60,000 milliseconds)
     
      
 
@@ -145,6 +158,9 @@ document.addEventListener('DOMContentLoaded', function() {
 //------1. I have the different versions of my pet already written in html and css I just have to add the morphing feature in javascript
 
 // Animate your pet across the screen while it's alive.
+
+
+
 
 
 
