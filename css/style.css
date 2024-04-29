@@ -19,7 +19,7 @@ h1 {
     position: absolute;
     top: 0px;
     right: -14%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* element moved horizontally to the left by 50% of its own width */ 
     z-index: 1;
     background-color: pink;
     padding: 10px;
@@ -48,7 +48,7 @@ h1 {
     padding: 10px 20px; 
     margin: 5px; 
     cursor: pointer; 
-    border-radius: 5px; 
+    border-radius: 30px; 
 }
 
 .start-game-button button {
@@ -57,7 +57,7 @@ h1 {
     padding: 10px 20px; 
     margin: 5px; 
     cursor: pointer; 
-    border-radius: 5px; 
+    border-radius: 30px; /* 30px made the buttons edges look more circular  */
 }
 
 .background-1 {
@@ -79,14 +79,14 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    display: none;
+    display: none; /* I used this display to hide the element until javascript functionality was used to make it appear */
 }
 
 .pet-1 img {
     width: 506px; 
     height: auto; 
     position: relative;
-    animation: moveAcrossScreen 10s linear infinite;
+    animation: moveAcrossScreen 10s linear 3s infinite; 
 
     
 
@@ -108,7 +108,7 @@ h1 {
     width: 606px; 
     height: auto; 
     position: relative;
-    animation: moveAcrossScreen 10s linear infinite;
+    animation: moveAcrossScreen 10s linear 3s infinite; 
     
 
     
@@ -128,7 +128,7 @@ h1 {
     width: 706px; 
     height: auto; 
     position: relative;
-    animation: moveAcrossScreen 10s linear infinite;
+    animation: moveAcrossScreen 10s linear 3s infinite; 
     
 
     
@@ -157,8 +157,8 @@ h1 {
 
 
 @keyframes moveAcrossScreen {
-    0% { left: -400px; }
-    100% { left: calc(100% - 100px); }
+    0% { left: -400px; } /*To move the element across the page the way I wanted it to I hade to start the animation at -400px to the left*/
+    100% { left: calc(100% - 45px); } /* playing around with this part seemed to make the animation move faster or slower and farther*/
 }
 
 
