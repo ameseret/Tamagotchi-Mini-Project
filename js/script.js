@@ -1,8 +1,4 @@
 
-
-
-
-// Create an Object or Class (look at your notes on JS Classes if you forgot) for your Tamagotchi
 class Pet {
     constructor(hunger, sleepiness, boredom, age, name ) {
 
@@ -14,10 +10,10 @@ class Pet {
     }
 
     eat() {
-        console.log("Eating");
+        // console.log("Eating"); //only used this for debugging 
         if (this.hunger > 0) {
             this.hunger--;
-            console.log("Hunger:", this.hunger); 
+            // console.log("Hunger:", this.hunger); 
             document.getElementById('hunger').innerText = `Hunger: ${this.hunger}`;
         } 
     }
@@ -31,10 +27,10 @@ class Pet {
 
 
     play() {
-        console.log("Playing");
+        // console.log("Playing"); //only used this for debugging 
         if (this.boredom > 0) {
             this.boredom--;
-            console.log("Boredom:", this.boredom);
+            // console.log("Boredom:", this.boredom);
             document.getElementById('boredom').innerText = `Boredom: ${this.boredom}`;
         } 
     
@@ -47,7 +43,7 @@ class Pet {
         //This block of code morphs the pet when it's age is 4 and when its age is 8
         if (this.age === 4) {
             document.querySelector('.pet-1').style.display = 'none';
-            document.querySelector('.pet-2').style.display = 'block';
+            document.querySelector('.pet-2').style.display = 'block';//this displays the element as a block-level element
         } else if (this.age === 8) {
             document.querySelector('.pet-2').style.display = 'none';
             document.querySelector('.pet-3').style.display = 'block';
@@ -58,40 +54,30 @@ class Pet {
     
 }
 
-// Instantiate your Tamagotchi (If you created a class)
-
+// the first and only new instance of the Pet class
 const firstPet = new Pet(5, 5, 5, 0, "baby lion");
 
-// Display a character of your choice on the screen to represent your pet
-//-------- I already have the character displayed
-
-// Display the following metrics for your pet:
-
-
-// Hunger (1-10 scale)
-// Sleepiness (1-10 scale)
-// Boredom (1-10 scale)
-// Age
-
-// Add buttons to the screen to feed your pet, 
-// and play with your pet.
 
 
 
+
+
+
+//This event listener sets up the beginning of the game by clicking the start game buttton
 document.addEventListener('DOMContentLoaded', function() {
-
+// I Used the'DOMContentLoaded event to have the perception of a faster loading time
 
     const startGameButton = document.querySelector('.start-game-event');
     startGameButton.addEventListener('click', function() {
 
-        const petName = prompt("Enter the name of your pet:");
+        const petName = prompt("Enter the name of your pet:"); // the name the user enters is stored in the variable petName
 
-        const firstPet = new Pet(5, 5, 5, 0, petName);
+        alert(`Your pet's name is ${petName}!`); //the user can't start the game until they name their pet
 
-        alert(`Your pet's name is ${petName}!`);
-
-        initializeGame(firstPet);
+        initializeGame(firstPet); //the firstPet object is passed as an argument 
     });
+
+    //------------------------------------------------------------------------------------
 
     function initializeGame(firstPet) {
 
@@ -123,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         firstPet.play();
            });
 
-    
+    //-------------------------------------------------------------------------------
     
      // This function increases the pet's age every minute
      let ageInterval = setInterval(function() {
@@ -135,6 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
 setInterval(function() {
     increaseMetrics();
 }, 10000); // It executes every 10 seconds (10,000 milliseconds)
+
+//-----------------------------------------------------------------------------------
 
 function increaseMetrics() {
     if (firstPet.hunger < 10) {
@@ -177,22 +165,18 @@ function checkIfPetIsDead() {
 
 
 
-// Add the ability to name your pet.
 
 
-// Style the page.
-//------1. Some styling is already done I might update it more later in the build
 
-// Increase your pet's age every x minutes
 
-// Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
 
-// You pet should die if Hunger, Boredom, or Sleepiness hits 10.
 
-// Morph your pet at certain ages.
-//------1. I have the different versions of my pet already written in html and css I just have to add the morphing feature in javascript
 
-// Animate your pet across the screen while it's alive.
+
+
+
+
+
 
 
 
