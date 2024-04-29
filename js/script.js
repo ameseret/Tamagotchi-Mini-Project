@@ -1,6 +1,6 @@
-// alert('Project 1')
 
-//Make a commit after you finish each of the following
+
+
 
 // Create an Object or Class (look at your notes on JS Classes if you forgot) for your Tamagotchi
 class Pet {
